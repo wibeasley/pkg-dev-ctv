@@ -71,16 +71,16 @@ When initializing a package, it is worth considering how it should be licensed. 
 
 WRE reference: [Package Structure](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Package-structure).
 
- - `r pkg("available")` checks whether a package name is valid and available, i.e., not already in use on CRAN, Bioconductor or GitHub. Also checks for unintended meanings of the name. `r pkg("collidr")` checks for collisions between a package or function name and existing names of packages and/or functions on CRAN.
- - `r pkg("usethis", priority = "core")` provides `create_package()` to set up a minimal package structure, along with many utilities to add components, including the `use_*_license()` functions, where `*` is replaced by the license name.
- - `r pkg("pkgKitten")` provides an almost empty package skeleton and some utilities to create help pages.
- - `Rcpp.package.skeleton()` from `r pkg("Rcpp")` extends `package.skeleton()` to add the components required to use `r pkg("Rcpp")` for interfacing C or C++ code in R packages. `r pkg("usethis")` provide similar functionality with the `use_c()` and `use_rcpp()` functions.
- - `r bioc("biocthis")` automates setup for Bioconductor packages.
- - `r github("insightsengineering/r.pkg.template")` initializes a GitHub repository for an R package, with the standard files and directories, along with CI/CD configurations and pre-commit git hooks to identify and resolve common issues.
- - `r pkg("fusen")` and `r github("jacobbien/litr-project")` create a package from a R markdown file. `r pkg("noweb")` creates a package via literate programming with noweb syntax (as used by Sweave).
- - `r pkg("DataPackageR")` creates a package from a dataset. `r pkg("rcompendium")` creates the structure for a Research Compendium: an R package structure to support reproducible research including raw data, analysis scripts, outputs and a make script.
- - `r pkg("leprechaun")` adds templating code to a package skeleton for creating a Shiny app as a package, without adding to the dependencies. `r pkg("golem")` creates a package template for developing and deploying a Shiny app using the `r pkg("golem")` framework.
- - `r pkg("pkgverse")` creates a meta package that bundles several related packages that can be installed and loaded together.
+- `r pkg("available")` checks whether a package name is valid and available, i.e., not already in use on CRAN, Bioconductor or GitHub. Also checks for unintended meanings of the name. `r pkg("collidr")` checks for collisions between a package or function name and existing names of packages and/or functions on CRAN.
+- `r pkg("usethis", priority = "core")` provides `create_package()` to set up a minimal package structure, along with many utilities to add components, including the `use_*_license()` functions, where `*` is replaced by the license name.
+- `r pkg("pkgKitten")` provides an almost empty package skeleton and some utilities to create help pages.
+- `Rcpp.package.skeleton()` from `r pkg("Rcpp")` extends `package.skeleton()` to add the components required to use `r pkg("Rcpp")` for interfacing C or C++ code in R packages. `r pkg("usethis")` provide similar functionality with the `use_c()` and `use_rcpp()` functions.
+- `r bioc("biocthis")` automates setup for Bioconductor packages.
+- `r github("insightsengineering/r.pkg.template")` initializes a GitHub repository for an R package, with the standard files and directories, along with CI/CD configurations and pre-commit git hooks to identify and resolve common issues.
+- `r pkg("fusen")` and `r github("jacobbien/litr-project")` create a package from a R markdown file. `r pkg("noweb")` creates a package via literate programming with noweb syntax (as used by Sweave).
+- `r pkg("DataPackageR")` creates a package from a dataset. `r pkg("rcompendium")` creates the structure for a Research Compendium: an R package structure to support reproducible research including raw data, analysis scripts, outputs and a make script.
+- `r pkg("leprechaun")` adds templating code to a package skeleton for creating a Shiny app as a package, without adding to the dependencies. `r pkg("golem")` creates a package template for developing and deploying a Shiny app using the `r pkg("golem")` framework.
+- `r pkg("pkgverse")` creates a meta package that bundles several related packages that can be installed and loaded together.
 
 ## Package development
 
@@ -96,13 +96,13 @@ See the [Links](#links) section for other guides, including those from
 [Bioconductor](https://www.bioconductor.org/) and
 [rOpenSci](https://ropensci.org/).
 
- - `r pkg("devtools", priority = "core")` facilitates interactive development of R and compiled code via the `load_all()` function to simulate installing and reloading the package. Additional functions support generating documentation, testing, checking a package and submitting to CRAN.
- - `r pkg("usethis", priority = "core")` provides helpers to add new components such as `use_r()`, `use_data()`, `use_vignette()`, or `use_news_md()`, along with functions to support specific packages or workflows, such as `use_testthat()` or `use_git()`.
- - `r pkg("pkgmaker")` provides utilities for working with package-specific options, registry objects (as defined by `r pkg("registry")`), vignettes, unit tests and BibTeX. Serves as an incubator for tools that may later be packaged separately.
- - `r pkg("packager")` performs package development tasks (document, build, check, etc) with `r pkg("fakemake")` or GNU make, so that make targets are only regenerated when files in the make chain have been updated. Provides a `create()` function to initialize a package with the required structure and an `infect()` function to work with a package initialized another way. The `r github("ComputationalProteomicsUnit/maker")` repository provides an external Makefile to perform development tasks.
- - `r github("rdatsci/rtcl")` provides command line utilities for development tasks, which are also provided as regular R functions.
- - `r github("unDocUMeantIt/roxyPackage")` provides the `roxy.package()` function to generate help files, vignettes and package-level documentation (e.g., NEWS and README) in both PDF and HTML; check and build packages, and manage a local package repository. Tasks can be performed individually or in combination.
- - `r github("JamesHWade/gpttools")` facilitates using large language models (from an AI service provider or a local model) for package development, e.g. converting code to a function; adding documentation or tests, or identifying improvements.
+- `r pkg("devtools", priority = "core")` facilitates interactive development of R and compiled code via the `load_all()` function to simulate installing and reloading the package. Additional functions support generating documentation, testing, checking a package and submitting to CRAN.
+- `r pkg("usethis", priority = "core")` provides helpers to add new components such as `use_r()`, `use_data()`, `use_vignette()`, or `use_news_md()`, along with functions to support specific packages or workflows, such as `use_testthat()` or `use_git()`.
+- `r pkg("pkgmaker")` provides utilities for working with package-specific options, registry objects (as defined by `r pkg("registry")`), vignettes, unit tests and BibTeX. Serves as an incubator for tools that may later be packaged separately.
+- `r pkg("packager")` performs package development tasks (document, build, check, etc) with `r pkg("fakemake")` or GNU make, so that make targets are only regenerated when files in the make chain have been updated. Provides a `create()` function to initialize a package with the required structure and an `infect()` function to work with a package initialized another way. The `r github("ComputationalProteomicsUnit/maker")` repository provides an external Makefile to perform development tasks.
+- `r github("rdatsci/rtcl")` provides command line utilities for development tasks, which are also provided as regular R functions.
+- `r github("unDocUMeantIt/roxyPackage")` provides the `roxy.package()` function to generate help files, vignettes and package-level documentation (e.g., NEWS and README) in both PDF and HTML; check and build packages, and manage a local package repository. Tasks can be performed individually or in combination.
+- `r github("JamesHWade/gpttools")` facilitates using large language models (from an AI service provider or a local model) for package development, e.g. converting code to a function; adding documentation or tests, or identifying improvements.
 
 ### Package documentation
 
@@ -184,34 +184,34 @@ WRE reference: [Package subdirectories](https://cran.r-project.org/doc/manuals/R
 
 These packages provide some automation and helpers to test code:
 
- - `r pkg("tinytest", priority = "core")` allows to add tests to a package with no further dependencies and includes the tests in the installed package, making them available to users.
- - `r pkg("testthat", priority = "core")` helpers for tests including snapshot tests. `r pkg("patrick")` allows to parameterize testing with testthat. `r pkg("hySpc.testthat")` attaches the tests to functions.
- - `r pkg("RUnit")` and `r pkg("svUnit")` provides alternative unit testing frameworks, similar to `r pkg("testthat")`
- - `r pkg("testit")` provides two convenience functions `assert()` and `test_pkg()` for a simple unit testing interface with minimal dependencies.
- - `r pkg("roxytest")` and `r pkg("roxut")` provide `r pkg("roxygen2")` roclets for testing with `r pkg("testthat")` and `r pkg("tinytest")`.
- - `r pkg("testex")` facilitates adding tests to examples, optionally via `r pkg("roxygen2")` roclets, including one for `r pkg("testthat")` style expectations.
- - `r pkg("realtest")` testing with distinct behaviours: expected, acceptable, current, fallback, ideal, or regressive.
- - `r pkg("unitizer")` provides a testing framework for interactive regression testing, making it simpler to review and debug tests.
- - `r pkg("unittest")` testing using the Test Anything Protocol, producing test output in a standard text format.
- - `r pkg("exampletestr")` and `r pkg("doctest")` convert examples into tests to be run by testthat. `r pkg("testex")` converts documentation by roxygen2 into tests to be run by testthat.
- - `r pkg("cucumber")` integrates with testthat to run tests specified using the 'Gherkin' language to describe high level scenarios, e.g. when \<I do this\>, then \<this should happen\>.
- - `r pkg("quickcheck")` and `r github("ropensci-review-tools/autotest")` check against randomly generated inputs and are compatible with testthat. 
- - `r pkg("xpectr")` provides tools for generating expectations for testthat tests in a systematic way.
+- `r pkg("tinytest", priority = "core")` allows to add tests to a package with no further dependencies and includes the tests in the installed package, making them available to users.
+- `r pkg("testthat", priority = "core")` helpers for tests including snapshot tests. `r pkg("patrick")` allows to parameterize testing with testthat. `r pkg("hySpc.testthat")` attaches the tests to functions.
+- `r pkg("RUnit")` and `r pkg("svUnit")` provides alternative unit testing frameworks, similar to `r pkg("testthat")`
+- `r pkg("testit")` provides two convenience functions `assert()` and `test_pkg()` for a simple unit testing interface with minimal dependencies.
+- `r pkg("roxytest")` and `r pkg("roxut")` provide `r pkg("roxygen2")` roclets for testing with `r pkg("testthat")` and `r pkg("tinytest")`.
+- `r pkg("testex")` facilitates adding tests to examples, optionally via `r pkg("roxygen2")` roclets, including one for `r pkg("testthat")` style expectations.
+- `r pkg("realtest")` testing with distinct behaviours: expected, acceptable, current, fallback, ideal, or regressive.
+- `r pkg("unitizer")` provides a testing framework for interactive regression testing, making it simpler to review and debug tests.
+- `r pkg("unittest")` testing using the Test Anything Protocol, producing test output in a standard text format.
+- `r pkg("exampletestr")` and `r pkg("doctest")` convert examples into tests to be run by testthat. `r pkg("testex")` converts documentation by roxygen2 into tests to be run by testthat.
+- `r pkg("cucumber")` integrates with testthat to run tests specified using the 'Gherkin' language to describe high level scenarios, e.g. when \<I do this\>, then \<this should happen\>.
+- `r pkg("quickcheck")` and `r github("ropensci-review-tools/autotest")` check against randomly generated inputs and are compatible with testthat. 
+- `r pkg("xpectr")` provides tools for generating expectations for testthat tests in a systematic way.
  
 Testing internet requests can be difficult to do reliably. 
 One can use [this book "HTTP testing in R"](https://books.ropensci.org/http-testing/) to take inspiration.
 
- - `r pkg("vcr")` records HTTP requests and replays them during future runs. 
- - `r pkg("webmockr")` stubbing (generating dummy results) and setting expectations on 'HTTP' requests. 
- - `r pkg("httptest2")` works for recording and saving requests made by the httr2 package without requiring access to the remote service.
- - `r pkg("webfakes")` allows to create and launch fake apps in test files, for testing complex behaviour.
+- `r pkg("vcr")` records HTTP requests and replays them during future runs. 
+- `r pkg("webmockr")` stubbing (generating dummy results) and setting expectations on 'HTTP' requests. 
+- `r pkg("httptest2")` works for recording and saving requests made by the httr2 package without requiring access to the remote service.
+- `r pkg("webfakes")` allows to create and launch fake apps in test files, for testing complex behaviour.
 
 Other packages focused on specific areas:
 
- - `r pkg("gdiff")` and `r pkg("vdiffr")` provide helpers for visual tests on graphical output. vdiffr integrates with testthat and provides a Shiny app to manage test cases.
- - `r pkg("shinytest2")` provides a testing framework for Shiny applications.
- - `r pkg("mcunit")` helps with unit testing MCMC methods.
- - `r pkg("checkmate")` and `r pkg("testdat")` package which extend testthat for data structures unit testing.
+- `r pkg("gdiff")` and `r pkg("vdiffr")` provide helpers for visual tests on graphical output. vdiffr integrates with testthat and provides a Shiny app to manage test cases.
+- `r pkg("shinytest2")` provides a testing framework for Shiny applications.
+- `r pkg("mcunit")` helps with unit testing MCMC methods.
+- `r pkg("checkmate")` and `r pkg("testdat")` package which extend testthat for data structures unit testing.
 
 #### Code coverage
 
