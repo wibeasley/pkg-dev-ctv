@@ -3,12 +3,12 @@ name: PackageDevelopment
 topic: Package Development and Maintenance
 maintainer: Lluís Revilla, Heather Turner
 email: lluis.revilla@gmail.com
-version: 2026-09-30
+version: 2026-10-05
 source: https://github.com/cran-task-views/PackageDevelopment/
 ---
 
-The maintainers gratefully acknowledge the initial work on this task view 
-by Roger Bivand.
+_The maintainers gratefully acknowledge the initial work on this task view 
+by Roger Bivand._
 
 ## Introduction
 
@@ -23,9 +23,9 @@ package development and maintenance. Contributed packages provide alternative
 or supplementary helper functions.
 
 The definitive reference for R package development is the [Writing R
-Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html)
-(WRE) manual. The [CRAN Repository Policy](https://cran.r-project.org/web/packages/policies.html) sets standards on top of
-this - see [Links] for policies of other repositories.
+Extensions](https://CRAN.R-project.org/doc/manuals/r-release/R-exts.html)
+(WRE) manual. The [CRAN Repository Policy](https://CRAN.R-project.org/web/packages/policies.html) sets standards on top of
+this - see the related links below for policies of other repositories.
 
 Contributed packages designed to facilitate package development are not
 guaranteed to be consistent with WRE or repository policies. Particular caution
@@ -54,7 +54,7 @@ package that does not yet exist.
 
 The CRAN Team occasionally use the [R-package-devel mailing list](https://stat.ethz.ch/mailman/listinfo/r-package-devel) to ask for maintainers to take on orphaned packages.
 
-The [CRAN Search](https://cran.r-project.org/search.html) page links to R-focused search tools, facilitating search of package sources, books, task views, support lists, blogs and the internet at large.
+The [CRAN Search](https://CRAN.R-project.org/search.html) page links to R-focused search tools, facilitating search of package sources, books, task views, support lists, blogs and the internet at large.
 
 `utils::RSiteSearch()` facilitates search for keywords/phrases in help
 pages (all the CRAN packages except those for Windows only and some from
@@ -75,7 +75,7 @@ packaging.
 
 When initializing a package, it is worth considering how it should be licensed. The CRAN Repository Policy links to a [database of licenses acceptable for CRAN](https://svn.r-project.org/R/trunk/share/licenses/license.db).
 
-WRE reference: [Package Structure](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Package-structure).
+WRE reference: [Package Structure](https://CRAN.R-project.org/doc/manuals/r-release/R-exts.html#Package-structure).
 
 - `r pkg("available")` checks whether a package name is valid and available, i.e., not already in use on CRAN, Bioconductor or GitHub. Also checks for unintended meanings of the name. `r pkg("collidr")` checks for collisions between a package or function name and existing names of packages and/or functions on CRAN.
 - `r pkg("usethis", priority = "core")` provides `create_package()` to set up a minimal package structure, along with many utilities to add components, including the `use_*_license()` functions, where `*` is replaced by the license name.
@@ -95,10 +95,10 @@ WRE reference: [Package Structure](https://cran.r-project.org/doc/manuals/r-rele
 Some contributed packages are analogous to `tools` in that
 they provide tools that cut across package development tasks.
 
-[Writing R Extensions](https://cran.r-project.org/doc/manuals/r-release/R-exts.html)
+[Writing R Extensions](https://CRAN.R-project.org/doc/manuals/r-release/R-exts.html)
 (WRE) describes the fundamental tasks of package development.
 
-See the [Links](#links) section for other guides, including those from
+See the "Related Links" section for other guides, including those from
 [Bioconductor](https://www.bioconductor.org/) and
 [rOpenSci](https://ropensci.org/).
 
@@ -119,7 +119,7 @@ as package websites or tutorials.
 Source files for help pages use the "R documentation" (Rd) format.
 `utils::prompt()` and `utils::promptData()` may be used to create an Rd template for a function or data set, respectively. `tools::checkRd()` may be used to validate Rd files, e.g., detecting syntax errors.
 
-WRE reference: [Writing R documentation files](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Writing-R-documentation-files)
+WRE reference: [Writing R documentation files](https://CRAN.R-project.org/doc/manuals/r-release/R-exts.html#Writing-R-documentation-files)
 
 - `r pkg("roxygen2", priority = "core")` provides the `roxygenise()` function to generate Rd files from comments with specific markup in R source files. When used with Markdown, `r pkg("roxygen2")` can greatly reduce the markup required in the documentation source. Several [development workflow](#development-workflow) packages support creating documentation with `r pkg("roxygen2")`.
 - `r pkg("sinew")` generates roxygen skeletons and updates the NAMESPACE and DESCRIPTION file as required; can be used to update as well as create roxygen documentation.
@@ -137,7 +137,7 @@ WRE reference: [Writing R documentation files](https://cran.r-project.org/doc/ma
 
 The default format for vignettes is Sweave format with special metadata described in WRE. `R CMD build` will use `utils::Sweave()` as the default *vignette engine* to build a vignette. Alternative vignette engines can be specified in the metadata in the form `<package>::<engine>`.
 
-WRE reference: [Writing package vignettes](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Writing-package-vignettes), especially [Non-Sweave vignettes](https://cran.r-project.org/doc/manuals/R-exts.html#Non_002dSweave-vignettes-1)
+WRE reference: [Writing package vignettes](https://CRAN.R-project.org/doc/manuals/r-release/R-exts.html#Writing-package-vignettes), especially [Non-Sweave vignettes](https://CRAN.R-project.org/doc/manuals/R-exts.html#Non_002dSweave-vignettes-1)
 
 - `r pkg("knitr", priority = "core")` provides vignette engines to compile HTML and PDF vignettes. The `knitr::rmarkdown` engine can be used with the `rmarkdown::html_vignette()` format, which is a lightweight alternative to `knitr::html_document()`. For mathematics to render offline, the `math_method` argument of `rmarkdown::html_vignette()` should be set to `"katex"` or `"r-katex"`.
 - `r pkg("litedown", priority = "core")` provides a vignette engine that can be used with its own output formats for HTML and PDF. It is designed to have minimal dependencies and produce lightweight HTML files. It has sufficient features for most vignettes (e.g., table of contents, cross-references, citations) and is recommended unless richer features are required.
@@ -185,7 +185,7 @@ corresponding `.Rout` file. If a corresponding `.Rout.save` exists in the
 `tests` directory, the two output files are compared, with differences being
 reported but not causing an error.
 
-WRE reference: [Package subdirectories](https://cran.r-project.org/doc/manuals/R-exts.html#Package-subdirectories)
+WRE reference: [Package subdirectories](https://CRAN.R-project.org/doc/manuals/R-exts.html#Package-subdirectories)
 
 These packages provide some automation and helpers to test code:
 
@@ -249,7 +249,7 @@ For simple interactive interfaces, `base::readline()` can be used to create a ba
 - `r pkg("fgui")` facilitates rapid generation of a Tcl/Tk interface to one or multiple functions.
 - `r pkg("getPass")` provides interfaces for securely requesting a passphrase, masking the characters typed in by the user. A GUI is used where possible, with fallback to a terminal interface.
 - `r pkg("progress")` provides configurable text progress bars, for R and C++.
-- `r pkg("shiny")` provides a framework to create browser-based interfaces, from function dialogues to more complex interactive web applications, that can be run locally with `runApp()` or deployed as static web or dynamic websites. See the [Web Technologies and Services](https://cran.r-project.org/web/views/WebTechnologies.html#frameworks) task view for other frameworks for building R-based web applications.
+- `r pkg("shiny")` provides a framework to create browser-based interfaces, from function dialogues to more complex interactive web applications, that can be run locally with `runApp()` or deployed as static web or dynamic websites. See the [Web Technologies and Services](https://CRAN.R-project.org/web/views/WebTechnologies.html#frameworks) task view for other frameworks for building R-based web applications.
 
 ### Localization
 
@@ -260,7 +260,7 @@ Localization in R uses GNU `gettext` as described in the notes on [Translating R
 and updates corresponding PO (`.po`) files as required. `tools::checkPoFile()` can be
 used to check translation files for inconsistently formatted strings.
 
-WRE reference: [Internationalization](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Internationalization)
+WRE reference: [Internationalization](https://CRAN.R-project.org/doc/manuals/r-release/R-exts.html#Internationalization)
 
 - `r pkg("potools", priority = "core")` provides helpers to create/update `.pot` and `.po` files, compile the `.po` files for distribution in a package, and run diagnostics to detect issues, e.g., untranslated messages due to inappropriate R/C code.
 - `r pkg("stranslate")` provides an alternative mechanism for localization of R messages using plain text.
@@ -284,11 +284,11 @@ be run on a package built with `R CMD build`. The check runs examples
 and tests in the package and the contents of the package are tested in
 various ways for consistency and portability.
 
-WRE reference: [Checking and building packages](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-and-building-packages).
+WRE reference: [Checking and building packages](https://CRAN.R-project.org/doc/manuals/r-release/R-exts.html#Checking-and-building-packages).
 Listings of environment variables used in `R CMD check` may be found the
 the [Tools
-chapter](https://cran.r-project.org/doc/manuals/r-devel/R-ints.html#Tools)
-of the R Internals manual. In the [Suggested packages section](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Suggested-packages) WRE recommends to run `R CMD check` both with `_R_CHECK_DEPENDS_ONLY_=true` and `_R_CHECK_SUGGESTS_ONLY_=true`, as well as with both of these set to `false`.
+chapter](https://CRAN.R-project.org/doc/manuals/r-devel/R-ints.html#Tools)
+of the R Internals manual. In the [Suggested packages section](https://CRAN.R-project.org/doc/manuals/r-release/R-exts.html#Suggested-packages) WRE recommends to run `R CMD check` both with `_R_CHECK_DEPENDS_ONLY_=true` and `_R_CHECK_SUGGESTS_ONLY_=true`, as well as with both of these set to `false`.
 
 CRAN provide the [Winbuilder](https://win-builder.r-project.org/) and [macOS builder](https://mac.r-project.org/macbuilder/submit.html) services for checking on Windows and M1 macOS machines, respectively.
 
@@ -339,7 +339,7 @@ analysis and checks of package and function name availability on CRAN.
 
 #### Compiled code checks
 
-WRE reference: [Checking memory access](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-memory-access)
+WRE reference: [Checking memory access](https://CRAN.R-project.org/doc/manuals/r-release/R-exts.html#Checking-memory-access)
 documents how memory violations and other issues in compiled code such as
 undefined behaviour can be detected with tools including Valgrind,
 Address Sanitizer (ASAN) and Undefined Behaviour Sanitizer (UBSAN).
@@ -394,7 +394,7 @@ configured for debugging memory issues.
 - [r-debug](https://github.com/wch/r-debug) provides a single Docker image
 containing various builds of R for debugging memory problems. These include
 images with the debugging tools Valgrind or gdb, as well as images with R
-compiled for use with ASAN, UBSAN or [gctorture](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Using-gctorture-1).
+compiled for use with ASAN, UBSAN or [gctorture](https://CRAN.R-project.org/doc/manuals/r-release/R-exts.html#Using-gctorture-1).
 
 The [CRAN Cookbook](https://contributor.r-project.org/cran-cookbook/) is a
 guide written in collaboration with the CRAN Team that provides "recipes" for
@@ -477,7 +477,7 @@ implicit use of base R functions (e.g. for compressing data objects).
 
 In time, a package may in turn be imported or suggested by another package,
 creating a reverse dependency. For CRAN packages, reverse dependencies are
-listed on the landing pages (of the form `https://cran.r-project.org/package={PACKAGE}`).
+listed on the landing pages (of the form `https://CRAN.R-project.org/package={PACKAGE}`).
 Package authors should be aware of these packages that may be impacted as
 their package evolves. Note that CRAN permits dependencies on Bioconductor
 packages, as well as other repositories specified in the
@@ -492,7 +492,7 @@ setting the `repos` argument of `utils::available.packages()` to `BiocManager::r
 
 `tools::check_packages_in_dir()` can be used to check the reverse dependencies of a package (or set of packages).
 
-WRE reference: [Package Dependencies](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Package-Dependencies).
+WRE reference: [Package Dependencies](https://CRAN.R-project.org/doc/manuals/r-release/R-exts.html#Package-Dependencies).
 
 - `r pkg("attachment")` provides helpers to update forward dependencies in your
 DESCRIPTION as required by changes to `.R` or `.Rmd` files, and to quickly
@@ -563,10 +563,10 @@ different packages.
 ### Keeping up to date
 
 WRE is versioned, addressing
-[R-release](https://cran.r-project.org/doc/manuals/r-release/R-exts.html),
-[R-patched](https://cran.r-project.org/doc/manuals/r-patched/R-exts.html),
+[R-release](https://CRAN.R-project.org/doc/manuals/r-release/R-exts.html),
+[R-patched](https://CRAN.R-project.org/doc/manuals/r-patched/R-exts.html),
 and
-[R-devel](https://cran.r-project.org/doc/manuals/r-devel/R-exts.html).
+[R-devel](https://CRAN.R-project.org/doc/manuals/r-devel/R-exts.html).
 Changes do occur as R develops and as the software components on which R
 is built evolve.
 
@@ -608,14 +608,9 @@ development.
 up-to-date when you load them, helping to keep up with changes in forward
 dependencies.
 
-## Links {#links}
 
-Documentation and guides from other R repositories:
+### Links
 
-- [R-universe Documentation](https://docs.r-universe.dev) - R-universe is
-  useful for sharing development versions of CRAN packages and as a CI/CD
-  platform.
-- [Bioconductor Packages: Development, Maintenance, and Peer
-  Review](https://contributions.bioconductor.org/)
-- [rOpenSci Packages: Development, Maintenance, and Peer
-  Review](https://devguide.ropensci.org/)
+- [R-universe Documentation](https://docs.r-universe.dev) - R-universe is useful for sharing development versions of CRAN packages and as a CI/CD platform.
+- [Bioconductor Packages: Development, Maintenance, and Peer Review](https://contributions.bioconductor.org/)
+- [rOpenSci Packages: Development, Maintenance, and Peer Review](https://devguide.ropensci.org/)
