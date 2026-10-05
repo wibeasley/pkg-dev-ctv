@@ -2,7 +2,7 @@
 name: PackageDevelopment
 topic: Package Development and Maintenance
 maintainer: Lluís Revilla, Heather Turner
-email: TBC
+email: lluis.revilla@gmail.com
 version: 2026-09-30
 source: https://github.com/cran-task-views/PackageDevelopment/
 ---
