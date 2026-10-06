@@ -539,9 +539,10 @@ streamline the process of updating NEWS. `r pkg("fledge")` additionally
 supports versioning R packages developed in git repositories.
 - `r github("jumpingrivers/diffify")` facilitates comparison between different versions of CRAN
 packages, reporting changes in the NEWS, dependencies, namespace or functions.
-- `r pkg("remotes")` provides `install_version()` to install a particular
-version of a package, while `r pkg("dateback")` can be used to install
-packages based on a date or date range.
+- `r pkg("remotes")` provides `install_version()` and
+  `r pkg("pak")` provides `pak()` 
+  to install a particular version of a package.
+  `r pkg("dateback")` can install packages based on a date or date range.
 - `r pkg("pacs")` provides various utilities for managing packages, including
 `pac_timemachine()` to get the package version at a certain date and functions
 to compare the DESCRIPTION or NAMESPACE across versions.
