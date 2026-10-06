@@ -273,7 +273,11 @@ The standard tools to build and install a package are `R CMD build` and
 
 - `r pkg("pkgbuild")` provides the `build()` function to build R packages and has several utilities to facilitate building packages with compiled code.
 - `r pkg("pkgload")` simulates the process of installing a package and then attaching it, enabling rapid iterative development.
-- There are many packages to facilitate installing packages from remote source code repositories, including those hosted on platforms like GitHub or GitLab. `r pkg("remotes")` has no dependencies and will install packages from any git or subversion repository accessible from an URL, with helpers for specific cases. In particular, `remotes::install_bioc()` can be used to install the development version of a Bioconductor package. `r pkg("ipkg")` depends on remotes and facilitates installing GitHub packages using a proxy website, if you don't have access to GitHub.
+- There are many packages to facilitate installing packages from remote source code repositories, including those hosted on platforms like GitHub or GitLab. 
+  `r pkg("pak")` and `r pkg("remotes")` have no dependencies and will install packages from any git or subversion repository accessible from an URL, with helpers for specific cases. 
+  In particular, `remotes::install_bioc()` can install the development version of a Bioconductor package. 
+  Similarly, `pak::pak()` can install Bioconductor packages when "bioc::" is prefixed to the name of the package.
+  `r pkg("ipkg")` depends on remotes and facilitates installing GitHub packages using a proxy website, if you don't have access to GitHub.
 
 ### Checking a package
 
@@ -539,10 +543,9 @@ streamline the process of updating NEWS. `r pkg("fledge")` additionally
 supports versioning R packages developed in git repositories.
 - `r github("jumpingrivers/diffify")` facilitates comparison between different versions of CRAN
 packages, reporting changes in the NEWS, dependencies, namespace or functions.
-- `r pkg("remotes")` provides `install_version()` and
-  `r pkg("pak")` provides `pak()` 
-  to install a particular version of a package.
-  `r pkg("dateback")` can install packages based on a date or date range.
+- `r pkg("remotes")` provides `install_version()` to install a particular
+version of a package, while `r pkg("dateback")` can be used to install
+packages based on a date or date range.
 - `r pkg("pacs")` provides various utilities for managing packages, including
 `pac_timemachine()` to get the package version at a certain date and functions
 to compare the DESCRIPTION or NAMESPACE across versions.
